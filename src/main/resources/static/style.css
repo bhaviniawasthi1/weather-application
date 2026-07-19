@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+.container {
+    flex: 1;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#cityInput:focus {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+#searchBtn {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 10px;
+    background: #f39c12;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+}
+
+#searchBtn:hover {
+    background: #e67e22;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#loading {
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 2rem;
+}
+
+#error {
+    background: rgba(231, 76, 60, 0.9);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#currentWeather {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+#currentWeather h2 {
+    font-size: 1.8rem;
+    color: #1e3c72;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.current-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.weather-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#weatherIcon {
+    width: 100px;
+    height: 100px;
+}
+
+.temp-value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #1e3c72;
+    line-height: 1;
+}
+
+.temp-value::after {
+    content: "°C";
+    font-size: 1.8rem;
+    vertical-align: super;
+}
+
+.desc {
+    font-size: 1.1rem;
+    color: #666;
+    text-transform: capitalize;
+    margin-top: 4px;
+}
+
+.weather-details {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.detail-card {
+    background: #f0f4ff;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 130px;
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e3c72;
+}
+
+#forecast {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+#forecast h3 {
+    font-size: 1.4rem;
+    color: #1e3c72;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.forecast-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.forecast-card {
+    background: #f0f4ff;
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    flex: 1;
+    min-width: 140px;
+    max-width: 170px;
+    transition: transform 0.2s;
+}
+
+.forecast-card:hover {
+    transform: translateY(-4px);
+}
+
+.forecast-card .day {
+    font-weight: 600;
+    color: #1e3c72;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.forecast-card img {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast-card .temps {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.forecast-card .high {
+    color: #e67e22;
+    font-weight: 600;
+}
+
+.forecast-card .low {
+    color: #3498db;
+    font-weight: 600;
+}
+
+.forecast-card .hum {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 1.2rem;
+    background: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+}

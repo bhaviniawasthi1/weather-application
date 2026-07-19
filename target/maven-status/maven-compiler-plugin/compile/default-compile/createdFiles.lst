@@ -1,0 +1,5 @@
+com\nimbusx\model\ForecastDay.class
+com\nimbusx\service\WeatherService.class
+com\nimbusx\NimbusXApplication.class
+com\nimbusx\model\WeatherResponse.class
+com\nimbusx\controller\WeatherController.class
